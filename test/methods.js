@@ -59,8 +59,8 @@ describe('removeTag()', function() {
     it('should accept one when srcPath is not given', function() {
       expect(preProc.removeTag('', 1, '', 'path1')).to.equal(CONVERTED);
     });
-    it('should accept one when pathTest is not given', function() {
-      expect(preProc.removeTag('', 1, 'path1/path2')).to.equal(CONVERTED);
+    it('should not accept one when pathTest is not given', function() {
+      expect(preProc.removeTag('', 1, 'path1/path2')).to.equal(NOT_CONVERTED);
     });
     it('should accept one when srcPath and pathTest are not given', function() {
       expect(preProc.removeTag('', 1)).to.equal(CONVERTED);
