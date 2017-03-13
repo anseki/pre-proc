@@ -1,0 +1,4 @@
+./test/isTargetPath.js
+./test/replaceTag.js
+./test/removeTag.js
+./test/pickTag.js
