@@ -47,27 +47,18 @@ foo baro
 
     expect(preProc.pickTag('TAG0', CONTENT)).to.be.null; // eslint-disable-line no-unused-expressions
     expect(preProc.pickTag('TAG1', CONTENT)).to.equal(`foo bar2
-foo bar3
-`);
+foo bar3`);
     expect(preProc.pickTag('TAG2', CONTENT)).to.equal(`foo bar4
-foo bar5
-`);
+foo bar5`);
     expect(preProc.pickTag('TAG3', CONTENT)).to.equal(`foo bar6
-foo bar7
-`);
+foo bar7`);
     expect(preProc.pickTag('TAG4', CONTENT)).to.be.null; // eslint-disable-line no-unused-expressions
     expect(preProc.pickTag('TAG(5)', CONTENT)).to.equal('o b');
-    expect(preProc.pickTag('TAG[6]', CONTENT)).to.equal(' bar   ');
-    expect(preProc.pickTag('TAG7', CONTENT)).to.equal(`
-foo bare
-`);
-    expect(preProc.pickTag('TAG8', CONTENT)).to.equal(`
-foo barg
-`);
+    expect(preProc.pickTag('TAG[6]', CONTENT)).to.equal('bar');
+    expect(preProc.pickTag('TAG7', CONTENT)).to.equal('foo bare');
+    expect(preProc.pickTag('TAG8', CONTENT)).to.equal('foo barg');
     expect(preProc.pickTag('TAG9', CONTENT)).to.equal(`foo barj
-foo bark `);
-    expect(preProc.pickTag('TAG$1', CONTENT)).to.equal(`
-foo barm
-`);
+foo bark`);
+    expect(preProc.pickTag('TAG$1', CONTENT)).to.equal('foo barm');
   });
 });
