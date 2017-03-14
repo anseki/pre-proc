@@ -103,6 +103,25 @@ For example:
 code = preProc.removeTag('DEBUG', code, filePath, ['/path/to/dir1', /\.js$/]);
 ```
 
+### `replaceTag`
+
+```js
+changedContent = preProc.replaceTag(tag, replacement, sourceContent[, srcPath[, pathTest]])
+```
+
+Replace one or more parts of the source code with specific string.
+
+This method is similar to the [`removeTag`](#removetag) method except that only a string that is specified for the `replacement` argument is inserted at each point that the tags existed.  
+That is, the following two codes work same:
+
+```js
+changedContent = preProc.removeTag(tag, sourceContent, srcPath, pathTest);
+```
+
+```js
+changedContent = preProc.replaceTag(tag, '', sourceContent, srcPath, pathTest);
+```
+
 ### `pickTag`
 
 ```js
