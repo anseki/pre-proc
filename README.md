@@ -15,7 +15,7 @@ Therefore we need something that processes only a few tasks e.g. switching param
 For example, in a case of JavaScript code:
 
 ```js
-test = true; // [DEBUG/]
+TEST_MODE = true; // [DEBUG/]
 ```
 
 Remove a line marked by `DEBUG` tag:
