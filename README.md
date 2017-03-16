@@ -2,6 +2,10 @@
 
 [![npm](https://img.shields.io/npm/v/pre-proc.svg)](https://www.npmjs.com/package/pre-proc) [![GitHub issues](https://img.shields.io/github/issues/anseki/pre-proc.svg)](https://github.com/anseki/pre-proc/issues) [![dependencies](https://img.shields.io/badge/dependencies-No%20dependency-brightgreen.svg)](package.json) [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE-MIT)
 
+* [Grunt](http://gruntjs.com/) plugin: [grunt-pre-proc](https://github.com/anseki/grunt-pre-proc)
+* [gulp](http://gulpjs.com/) plugin: [gulp-pre-proc](https://github.com/anseki/gulp-pre-proc)
+* [webpack](https://webpack.js.org/) loader: [pre-proc-loader](https://github.com/anseki/pre-proc-loader)
+
 The super simple preprocessor for front-end development.
 
 If you want preprocessor that works like popular compilers or feature rich preprocessor, other great tools such as [preprocess](https://github.com/jsoverson/preprocess) may be better for you.  
@@ -99,7 +103,7 @@ The `pathTest` can be a string that must be at the start of the `srcPath`, a Reg
 For example:
 
 ```js
-// All files in `dir1` directory and all JS files.
+// Remove `DEBUG` contents, if current file is in `dir1` directory or it is JS file.
 code = preProc.removeTag('DEBUG', code, filePath, ['/path/to/dir1', /\.js$/]);
 ```
 
