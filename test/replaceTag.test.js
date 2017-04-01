@@ -3,19 +3,19 @@
 const expect = require('chai').expect,
   preProc = require('../lib/pre-proc');
 
-describe('replaceTag()', function() {
+describe('replaceTag()', () => {
 
-  it('should replace specific tag', function() {
+  it('should replace specific tag', () => {
     expect(preProc.replaceTag('tag', '@foo@', 'aaa/*[tag]*/xxx/*[/tag]*/bbb')).to.equal('aaa@foo@bbb');
   });
 
-  it('should replace a tag that contains meta characters', function() {
+  it('should replace a tag that contains meta characters', () => {
     expect(preProc.replaceTag('a!b', '@foo@', 'aaa/*[a!b]*/xxx/*[/a!b]*/bbb')).to.equal('aaa@foo@bbb');
     expect(preProc.replaceTag('a b $', '@foo@', 'aaa/*[a b $]*/xxx/*[/a b $]*/bbb')).to.equal('aaa@foo@bbb');
     expect(preProc.replaceTag('(\\a\\b)', '@foo@', 'aaa/*[(\\a\\b)]*/xxx/*[/(\\a\\b)]*/bbb')).to.equal('aaa@foo@bbb');
   });
 
-  it('should replace only specific tags', function() {
+  it('should replace only specific tags', () => {
     expect(preProc.replaceTag(['TAG1', 'TAG3'], '@foo@',
       `foo bar1
 // [TAG1]
@@ -44,7 +44,7 @@ xxx
 `);
   });
 
-  it('should replace specific tags in multiple formats', function() {
+  it('should replace specific tags in multiple formats', () => {
     expect(preProc.replaceTag(['TAG1', 'TAG3', 'TAG4', 'TAG(5)', 'TAG[6]', 'TAG8', 'TAG9'], '@foo@',
       `foo bar1
 // [TAG1]

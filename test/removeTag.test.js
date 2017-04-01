@@ -3,19 +3,19 @@
 const expect = require('chai').expect,
   preProc = require('../lib/pre-proc');
 
-describe('removeTag()', function() {
+describe('removeTag()', () => {
 
-  it('should remove specific tag', function() {
+  it('should remove specific tag', () => {
     expect(preProc.removeTag('tag', 'aaa/*[tag]*/xxx/*[/tag]*/bbb')).to.equal('aaabbb');
   });
 
-  it('should remove a tag that contains meta characters', function() {
+  it('should remove a tag that contains meta characters', () => {
     expect(preProc.removeTag('a!b', 'aaa/*[a!b]*/xxx/*[/a!b]*/bbb')).to.equal('aaabbb');
     expect(preProc.removeTag('a b $', 'aaa/*[a b $]*/xxx/*[/a b $]*/bbb')).to.equal('aaabbb');
     expect(preProc.removeTag('(\\a\\b)', 'aaa/*[(\\a\\b)]*/xxx/*[/(\\a\\b)]*/bbb')).to.equal('aaabbb');
   });
 
-  it('should remove only specific tags', function() {
+  it('should remove only specific tags', () => {
     expect(preProc.removeTag(['TAG1', 'TAG3'],
       `foo bar1
 // [TAG1]
@@ -42,7 +42,7 @@ xxx
 `);
   });
 
-  it('should remove specific tags in multiple formats', function() {
+  it('should remove specific tags in multiple formats', () => {
     expect(preProc.removeTag(['TAG1', 'TAG3', 'TAG4', 'TAG(5)', 'TAG[6]', 'TAG8', 'TAG9'],
       `foo bar1
 // [TAG1]

@@ -3,8 +3,8 @@
 const expect = require('chai').expect,
   preProc = require('../lib/pre-proc');
 
-describe('pickTag()', function() {
-  it('should get specific tag in multiple formats', function() {
+describe('pickTag()', () => {
+  it('should get specific tag in multiple formats', () => {
     const CONTENT = `foo bar1
 // [TAG1]
 foo bar2
