@@ -1,4 +1,5 @@
 ./test/isTargetPath.test.js
 ./test/replaceTag.test.js
+./test/replaceTagMultipleValues.test.js
 ./test/removeTag.test.js
 ./test/pickTag.test.js
