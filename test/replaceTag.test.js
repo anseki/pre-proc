@@ -105,4 +105,70 @@ foo barl
 `);
   });
 
+  it('should replace tags with each values', () => {
+    const content = `foo bar1
+// [TAG1]
+foo bar2
+foo bar3
+// [/TAG1]
+xxx
+// [TAG2]
+foo bar4
+foo bar5
+// [/TAG2]
+xxx
+// [TAG3]
+foo bar6
+foo bar7
+// [/TAG3]
+`;
+
+    expect(preProc.replaceTag(['TAG1', 'TAG3'], ['@foo1@', '@foo3@'], content)).to.equal(`foo bar1
+@foo1@
+xxx
+// [TAG2]
+foo bar4
+foo bar5
+// [/TAG2]
+xxx
+@foo3@
+`);
+
+    // Missing element
+    expect(preProc.replaceTag(['TAG1', 'TAG3'], ['@foo1@'], content)).to.equal(`foo bar1
+@foo1@
+xxx
+// [TAG2]
+foo bar4
+foo bar5
+// [/TAG2]
+xxx
+@foo1@
+`);
+
+    // Not array
+    expect(preProc.replaceTag(['TAG1', 'TAG3'], '@foo1@', content)).to.equal(`foo bar1
+@foo1@
+xxx
+// [TAG2]
+foo bar4
+foo bar5
+// [/TAG2]
+xxx
+@foo1@
+`);
+
+    // Ignored element
+    expect(preProc.replaceTag(['TAG1', 'TAG2'], ['@foo1@', '@foo2@', '@foo3@'], content)).to.equal(`foo bar1
+@foo1@
+xxx
+@foo2@
+xxx
+// [TAG3]
+foo bar6
+foo bar7
+// [/TAG3]
+`);
+  });
+
 });
