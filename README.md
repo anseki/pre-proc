@@ -126,6 +126,28 @@ changedContent = preProc.removeTag(tag, sourceContent, srcPath, pathTest);
 changedContent = preProc.replaceTag(tag, '', sourceContent, srcPath, pathTest);
 ```
 
+The `replacement` can be a string or an array that contains multiple strings. If arrays are specified for both the `tag` and `replacement`, each found tag is replaced with a `replacement` element that has the same index of the array.
+
+For example:
+
+```js
+code = preProc.replaceTag(['TAG-1', 'TAG-2', 'TAG-3'], ['VALUE-1', 'VALUE-2', 'VALUE-3'], code);
+// 'TAG-1' => 'VALUE-1', 'TAG-2' => 'VALUE-2', 'TAG-3' => 'VALUE-3',
+```
+
+If the `replacement` array is shorter than the `tag` array, a last `replacement` element is repeated for the remaining `tag` elements.
+
+For example:
+
+```js
+code = preProc.replaceTag(['TAG-1', 'TAG-2', 'TAG-3'], ['VALUE-1', 'VALUE-2'], code);
+// 'TAG-1' => 'VALUE-1', 'TAG-2' => 'VALUE-2', 'TAG-3' => 'VALUE-2' (Missing `replacement[2]`),
+```
+
+```js
+code = preProc.replaceTag(['TAG-1', 'TAG-2', 'TAG-3'], 'COMMON-VALUE', code);
+```
+
 ### `pickTag`
 
 ```js
