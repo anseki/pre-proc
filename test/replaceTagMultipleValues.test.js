@@ -91,6 +91,6 @@ foo barf
 foo barh
 foo bari@foo9@
 foo barl`);
-});
+  });
 
 });
