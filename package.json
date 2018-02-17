@@ -12,6 +12,10 @@
     "html"
   ],
   "main": "./lib/pre-proc.js",
+  "files": [
+    "lib/*.js",
+    "LICENSE-MIT"
+  ],
   "engines": {
     "node": ">= 0.8.0"
   },
