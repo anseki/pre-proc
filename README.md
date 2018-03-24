@@ -188,3 +188,17 @@ Result (`htmlPanel`):
   foo bar
 </div>
 ```
+
+When the tag was not found, this method returns `null`, not a string. It is useful for handling unknown source code.
+
+For example:
+
+```js
+var preProc = require('pre-proc');
+// ...
+target = preProc.pickTag('TAG', source);
+if (target != null) {
+  // Do something only when the target was found. the target might be an empty string.
+}
+```
+
