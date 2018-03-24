@@ -5,7 +5,8 @@ const expect = require('chai').expect,
 
 describe('isTargetPath()', () => {
   // pathTest - `content` is converted to string when the test is passed.
-  const CONVERTED = '1', NOT_CONVERTED = 1;
+  const CONVERTED = '1',
+    NOT_CONVERTED = 1;
 
   it('should accept one that contains a path', () => {
     expect(preProc.removeTag('', 1, 'path1/path2', 'path1')).to.equal(CONVERTED);
