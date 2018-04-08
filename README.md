@@ -14,7 +14,7 @@ This preProc is very simple preprocessor for front-end development. JavaScript, 
 **Why is simple preprocessor needed?**
 
 In front-end development, almost tasks are processed by a build script such as webpack, gulp, Grunt, etc.  
-Therefore we need something that processes only a few tasks e.g. switching parameters. And it allow the build script to control its behavior flexibly. It only edits a source code by tags.
+Therefore we need something that processes only a few tasks e.g. switching parameters. And it allows the build script to control its behavior flexibly. It only edits a source code by tags.
 
 For example, in a case of JavaScript code:
 
