@@ -22,7 +22,7 @@ For example, in a case of JavaScript code:
 TEST_MODE = true; // [DEBUG/]
 ```
 
-Remove a line marked by `DEBUG` tag:
+Remove all lines marked by `DEBUG` tag:
 
 ```js
 var preProc = require('pre-proc');
