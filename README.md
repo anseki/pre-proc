@@ -1,6 +1,6 @@
 # preProc
 
-[![npm](https://img.shields.io/npm/v/pre-proc.svg)](https://www.npmjs.com/package/pre-proc) [![GitHub issues](https://img.shields.io/github/issues/anseki/pre-proc.svg)](https://github.com/anseki/pre-proc/issues) [![dependencies](https://img.shields.io/badge/dependencies-No%20dependency-brightgreen.svg)](package.json) [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE-MIT)
+[![npm](https://img.shields.io/npm/v/pre-proc.svg)](https://www.npmjs.com/package/pre-proc) [![GitHub issues](https://img.shields.io/github/issues/anseki/pre-proc.svg)](https://github.com/anseki/pre-proc/issues) [![dependencies](https://img.shields.io/badge/dependencies-No%20dependency-brightgreen.svg)](package.json) [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 * [Grunt](http://gruntjs.com/) plugin: [grunt-pre-proc](https://github.com/anseki/grunt-pre-proc)
 * [gulp](http://gulpjs.com/) plugin: [gulp-pre-proc](https://github.com/anseki/gulp-pre-proc)
